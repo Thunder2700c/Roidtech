@@ -15,18 +15,13 @@
   <section id="hero" class="section">
     <div class="background-overlay"></div>
 
-    <!-- 3D S23 FE Model -->
     <div class="device-container">
       <model-viewer
         id="s23fe-model"
-        src="https://raw.githubusercontent.com/Thunder2700c/TestforRoidtech/main/s23fe.glb"
+        src="./s23fe.glb"
         alt="Samsung Galaxy S23 FE"
-        auto-rotate
-        camera-controls
-        ar
-        exposure="0.9"
-        shadow-intensity="2"
-        environment-image="neutral"
+        auto-rotate camera-controls ar
+        exposure="0.9" shadow-intensity="2"
         disable-zoom
       ></model-viewer>
     </div>
@@ -46,19 +41,39 @@
     </div>
   </section>
 
+  <!-- UPDATED GUIDES WITH IMAGES -->
   <section id="guides" class="section">
     <h2 class="section-title anim-el">FEATURED GUIDES</h2>
     <div class="guide-grid">
-      <div class="guide-card glass-effect anim-card"><h3>One UI Features</h3><p>New & hidden features in every release.</p><a href="#video-showcase">View Videos →</a></div>
-      <div class="guide-card glass-effect anim-card"><h3>S23 FE Deep Dive</h3><p>Benchmarks, tips & best settings.</p><a href="#video-showcase">View Videos →</a></div>
-      <div class="guide-card glass-effect anim-card"><h3>Download Hub</h3><p>Official APKs & Good Lock modules.</p><a href="https://www.youtube.com/watch?v=5vvcqE10jyc6" target="_blank">Get Links →</a></div>
+      
+      <div class="guide-card glass-effect anim-card">
+        <img src="assets/oneui.jpg" alt="One UI Features" class="card-thumb">
+        <h3>One UI Features</h3>
+        <p>New & hidden features in every release.</p>
+        <a href="#video-showcase" class="card-link">View Videos →</a>
+      </div>
+      
+      <div class="guide-card glass-effect anim-card">
+        <img src="assets/s23fe.jpg" alt="S23 FE Deep Dive" class="card-thumb">
+        <h3>S23 FE Deep Dive</h3>
+        <p>Benchmarks, tips & best settings.</p>
+        <a href="#video-showcase" class="card-link">View Videos →</a>
+      </div>
+      
+      <div class="guide-card glass-effect anim-card">
+        <img src="assets/download.jpg" alt="Download Hub" class="card-thumb">
+        <h3>Download Hub</h3>
+        <p>Official APKs & Good Lock modules.</p>
+        <a href="https://www.youtube.com/watch?v=5vvcqE10jyc6" target="_blank" class="card-link">Get Links →</a>
+      </div>
+      
     </div>
   </section>
 
   <section id="video-showcase" class="section">
     <h2 class="section-title anim-el">LATEST VIDEOS</h2>
     <div class="video-grid" id="video-container"></div>
-    <a href="https://www.youtube.com/playlist?list=PL..." target="_blank" class="cta-button small anim-el">VIEW ALL ON YOUTUBE</a>
+    <a href="https://www.youtube.com/@roidtech" target="_blank" class="cta-button small anim-el">VIEW ALL ON YOUTUBE</a>
   </section>
 
   <footer class="glass-effect">
