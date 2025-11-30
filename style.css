@@ -218,11 +218,13 @@ body {
     opacity: 0.6;
 }
 
-/* --- CTA BUTTON STYLES (MISSING) --- */
+/* --- CTA BUTTON STYLES --- */
 
 .cta-button {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
+    /* CRITICAL FIX: Ensure background is set and text color is contrasting (dark) */
+    background-color: var(--accent-color); /* Should be blue */
+    color: var(--bg-color); /* Should be the dark background color, ensuring contrast */
+    
     padding: 12px 30px;
     border-radius: 50px;
     font-weight: 700;
@@ -240,75 +242,7 @@ body {
 .cta-button.small {
     font-size: 0.9rem;
     padding: 10px 25px;
-}
-
-
-/* --- FOOTER & SOCIAL LINKS FIX --- */
-footer {
-    width: 100%;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-footer p {
-    color: var(--text-color); 
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-
-.social-links a {
-    color: var(--text-color); 
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 500;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-}
-
-.social-links a:hover {
-    opacity: 1;
-    color: var(--accent-color);
-}
-
-/* --- RESPONSIVENESS --- */
-@media (max-width: 1024px) {
-    #s23fe-model {
-        width: 60vw;
-        height: 60vh;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .hero-heading {
-        font-size: clamp(2rem, 10vw, 4rem);
-    }
-    .hero-subtext {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .section {
-        min-height: auto;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-    footer {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .social-links {
-        margin-top: 10px;
-    }
-    #s23fe-model {
-        width: 80vw;
-        height: 80vh;
-    }
+    /* Ensure the small version also has the correct colors */
+    background-color: var(--accent-color);
+    color: var(--bg-color); 
 }
