@@ -34,3 +34,18 @@ const downloadLinks = {
     { name: "Good Guardians", url: "https://www.youtube.com/watch?v=eN7VawUXD-03" }       // REPLACE WITH ACTUAL APK LINK
   ]
 };
+
+  // NEW CATEGORY 1: For general apps the YouTuber links to often
+  otherEssentialApps: [
+    { name: "Bixby Routines Plus", url: "https://link.to/routines-plus" },
+    { name: "Samsung Expert RAW", url: "https://link.to/expert-raw" },
+    { name: "Vanish Mode App", url: "https://link.to/vanish-mode" }
+  ],
+  
+  // NEW CATEGORY 2: For older or less frequent links
+  archiveLinks: [
+    { name: "Old Good Lock 2023", url: "https://link.to/old-lock-23" },
+    { name: "Obscure One UI Tool", url: "https://link.to/obscure-tool" }
+  ]
+
+// Remember to ensure commas separate all categories!
