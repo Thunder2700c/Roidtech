@@ -22,30 +22,34 @@ const featuredVideos = [
 ];
 
 // --- 2. DOWNLOAD HUB LINKS ---
+// To add new download sections, create a new entry below like "otherApps: []"
 // To add a new download, copy and paste an existing entry, then update the name and the URL.
 const downloadLinks = {
+  // ORIGINAL CATEGORY 1: Good Lock Modules
   goodLockModules: [
-    { name: "Theme Park (APK)", url: "https://www.youtube.com/watch?v=_dsiIOwzhcs9" }, // REPLACE WITH ACTUAL APK LINK
-    { name: "Keys Cafe (APK)", url: "https://www.youtube.com/watch?v=eN7VawUXD-00" }, // REPLACE WITH ACTUAL APK LINK
-    { name: "Home Up (APK)", url: "https://www.youtube.com/watch?v=eN7VawUXD-01" }  // REPLACE WITH ACTUAL APK LINK
+    { name: "Theme Park (APK)", url: "https://www.youtube.com/watch?v=_dsiIOwzhcs9" }, 
+    { name: "Keys Cafe (APK)", url: "https://www.youtube.com/watch?v=eN7VawUXD-00" }, 
+    { name: "Home Up (APK)", url: "https://www.youtube.com/watch?v=eN7VawUXD-01" }
   ],
+  
+  // ORIGINAL CATEGORY 2: System Apps
   systemApps: [
-    { name: "Samsung AppLock (Latest)", url: "https://www.youtube.com/watch?v=eN7VawUXD-02" }, // REPLACE WITH ACTUAL APK LINK
-    { name: "Good Guardians", url: "https://www.youtube.com/watch?v=eN7VawUXD-03" }       // REPLACE WITH ACTUAL APK LINK
-  ]
-};
+    { name: "Samsung AppLock (Latest)", url: "https://www.youtube.com/watch?v=eN7VawUXD-02" }, 
+    { name: "Good Guardians", url: "https://www.youtube.com/watch?v=eN7VawUXD-03" }       
+  ],
 
-  // NEW CATEGORY 1: For general apps the YouTuber links to often
+  // NEW CATEGORY 3: Other Essential Apps
   otherEssentialApps: [
     { name: "Bixby Routines Plus", url: "https://link.to/routines-plus" },
     { name: "Samsung Expert RAW", url: "https://link.to/expert-raw" },
     { name: "Vanish Mode App", url: "https://link.to/vanish-mode" }
   ],
   
-  // NEW CATEGORY 2: For older or less frequent links
+  // NEW CATEGORY 4: Archive & Older Links
   archiveLinks: [
     { name: "Old Good Lock 2023", url: "https://link.to/old-lock-23" },
     { name: "Obscure One UI Tool", url: "https://link.to/obscure-tool" }
   ]
+};
 
 // Remember to ensure commas separate all categories!
