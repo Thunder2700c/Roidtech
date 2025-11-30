@@ -65,7 +65,7 @@ body {
     width: 100%;
     height: 100vh; 
     pointer-events: none;
-    z-index: 0; 
+    z-index: 15; /* CRITICAL FIX: Set higher than hero-content (z-index: 10) */
     overflow: hidden; 
 }
 
@@ -74,17 +74,32 @@ body {
     width: 50vw; 
     height: 100vh;
     top: 0; 
-    left: 50%; 
-    transform: translateX(20%); 
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%) translateY(-20%); /* CRITICAL FIX: Center and shift up for dramatic effect */
     opacity: 0.9;
     --poster-color: transparent; 
 }
 
+/* Ensure the text is still readable by making the model transparent or using the background */
 .hero-content {
     max-width: 900px;
     position: relative; 
     z-index: 10; 
 }
+
+/* --- RESPONSIVENESS (Update for mobile) --- */
+
+@media (max-width: 1024px) {
+    #s23fe-model {
+        width: 80vw;
+        height: 80vh;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -10%); /* Shift slightly up for mobile view */
+        opacity: 0.7; /* Optional: Reduce opacity to ensure text readability on smaller screens */
+    }
+}
+
 
 /* --- TYPOGRAPHY AND HEADINGS (MISSING) --- */
 
