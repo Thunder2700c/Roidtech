@@ -1,10 +1,9 @@
-const featuredVideos = [
-  { title: "🔥 Enable Depth Effect Clock on Samsung Lock Screen | FREE", embedId: "-co1VuiDGCE", desc: "iOS-style Depth Effect clock on any Galaxy." },
-  { title: "Samsung S23/23FE/S23 Ultra November Update Review", embedId: "JRAHwreGlA0", desc: "Battery, heat & camera changes." },
-  { title: "Samsung Official AppLock App is Here 🔒", embedId: "F01QJDYIN-c", desc: "Official AppLock finally released!" }
-];
+// --- 1. DYNAMIC CONTENT INJECTION (USES DATA FROM config.js) ---
 
 function renderVideos() {
+  // Checks if featuredVideos array from config.js is loaded
+  if (typeof featuredVideos === 'undefined') return; 
+
   document.getElementById('video-container').innerHTML = featuredVideos.map(v => `
     <div class="video-item glass-effect anim-card">
       <div class="video-embed"><iframe 
@@ -22,7 +21,8 @@ function renderVideos() {
 }
 renderVideos();
 
-// GSAP Animations
+// --- 2. GSAP ANIMATIONS ---
+
 gsap.registerPlugin(ScrollTrigger);
 
 // Hero text
@@ -36,25 +36,23 @@ document.querySelectorAll('.anim-card, .section-title').forEach(el => {
   });
 });
 
-// 3D Phone – Epic scroll magic (Updated for model-viewer)
+// 3D Phone – Epic scroll magic
 gsap.to("#s23fe-model", {
-  // Animating the model-viewer properties:
-  // camera-orbit format is: "theta phi radius"
-  "camera-orbit": "360deg 90deg 2.5m", // Rotates the view 360 degrees and moves slightly further away
-  "field-of-view": "50deg",             // Changes the zoom (shrinks the apparent size)
-  opacity: 0,                           // Fades out the model container
+  "camera-orbit": "360deg 90deg 2.5m", 
+  "field-of-view": "50deg",             
+  opacity: 0,                          
   ease: "none",
   scrollTrigger: { 
     trigger: "#hero", 
     start: "top top", 
-    end: "bottom top", // Ends when the hero section leaves the viewport
+    end: "bottom top", 
     scrub: 1.2 
   }
 });
 
-// Gentle idle float (Updated for model-viewer)
+// Gentle idle float
 gsap.to("#s23fe-model", {
-  "camera-orbit": "+=10deg -=5deg", // Subtly moves the camera for a gentle float
+  "camera-orbit": "+=10deg -=5deg", 
   duration: 14, 
   repeat: -1, 
   yoyo: true, 
