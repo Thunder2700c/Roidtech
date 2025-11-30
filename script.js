@@ -1,4 +1,4 @@
-// --- 1. DATA ARRAY: ALL THREE VIDEOS ARE NOW CORRECT ---
+// --- 1. DATA ARRAY: ALL THREE VIDEOS ARE CORRECT AND FINAL ---
 
 const featuredVideos = [
     {
@@ -27,7 +27,6 @@ function renderVideos() {
         <div class="video-item glass-effect anim-card">
             <div class="video-embed">
                 <iframe 
-                    // This uses the correct 11-character IDs
                     src="https://www.youtube.com/embed/${video.embedId}?rel=0" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -42,7 +41,7 @@ function renderVideos() {
     `).join('');
 }
 
-renderVideos(); 
+renderVideos(); // Run the function on page load
 
 
 // --- 3. GSAP ANIMATIONS (Initialization) ---
@@ -88,28 +87,40 @@ document.querySelectorAll('.anim-card, .anim-el:not(.cta-button)').forEach((elem
 const s23fe = document.getElementById('s23fe-model');
 
 if (s23fe) {
-    // Initial Load: Fade in and position the phone
-    gsap.from(s23fe, {
-        opacity: 0,
-        y: 100,
-        rotationY: 90,
-        duration: 1.5,
-        ease: "power3.out"
+    // 1. Initial State: Set the phone to its starting position (Right side, slightly rotated)
+    gsap.set(s23fe, {
+        opacity: 0.9,
+        rotationX: 10,  // Initial 3D tilt
+        rotationY: -15, // Initial side rotation
     });
-
-    // ScrollTrigger: Define the floating motion
+    
+    // 2. ScrollTrigger: Define the motion that happens when scrolling
     gsap.to(s23fe, {
-        y: "-300%",          // Moves the phone up and out of the viewport
-        rotationX: 30,       // Tilts dynamically
-        rotationZ: 360,      // Completes one full spin
-        scale: 0.5,          // Shrinks slightly
+        y: "-150%",          // Moves the phone up relative to the viewport
+        x: "50%",            // Moves it further right during the scroll
+        rotationX: 80,       // Tumbles on the X-axis (more dynamic)
+        rotationY: 180,      // Flips halfway around the Y-axis
+        rotationZ: 30,       // Tilts the screen slightly
+        scale: 0.8,          // Shrinks slightly
+        opacity: 0,          // Fades out as the scroll ends
+
         ease: "power1.inOut",
         
         scrollTrigger: {
             trigger: "#hero",
             start: "top top",     
             end: "bottom top",    
-            scrub: true,          // Links motion to scroll bar
+            scrub: true,         
         }
+    });
+    
+    // 3. Floating Effect: Add a subtle, continuous background float 
+    gsap.to(s23fe, {
+        y: "+=20", // Move up and down 20px
+        rotation: 2, // Subtle continuous rotation
+        ease: "sine.inOut",
+        repeat: -1, // Infinite loop
+        yoyo: true, // Go back and forth
+        duration: 8,
     });
 }
