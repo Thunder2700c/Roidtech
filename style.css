@@ -261,3 +261,63 @@ body {
     background-color: var(--accent-color);
     color: var(--bg-color); 
 }
+
+/* --- DOWNLOAD HUB STYLING --- */
+
+.back-link {
+    display: inline-block;
+    color: var(--accent-color);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.download-category {
+    padding: 30px;
+    width: 100%;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.download-category h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.download-list {
+    list-style: none;
+}
+
+.download-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.download-list li:last-child {
+    border-bottom: none;
+}
+
+.download-list span {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.download-link {
+    background-color: var(--glass-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    transition: background-color 0.3s;
+}
+
+.download-link:hover {
+    background-color: rgba(0, 122, 255, 0.1);
+}
