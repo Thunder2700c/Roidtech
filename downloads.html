@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>RoidTech Hub – Download Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <section id="download-page" class="section">
+        <div class="background-overlay"></div>
+        <div class="hero-content" style="max-width: 800px; z-index: 10;">
+            
+            <a href="index.html" class="back-link">← Back to Home</a>
+            
+            <h1 class="section-title" style="margin-top: 20px;">
+                DOWNLOAD HUB
+            </h1>
+            <p class="hero-subtext">
+                Direct links to Official APKs, Good Lock Modules, and essential apps for your Samsung Galaxy device.
+            </p>
+            
+            <div id="download-content">
+                </div>
+
+            <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">
+                Disclaimer: Download and install at your own risk. Links provided are for official, verified sources.
+            </p>
+
+        </div>
+    </section>
+
+    <footer class="glass-effect">
+        <p>© 2025 RoidTech Hub • Built by a fan</p>
+        <div class="social-links">
+            <a href="https://www.youtube.com/watch?v=eN7VawUXD-04" target="_blank">YouTube</a>
+            <a href="https://instagram.com/roid.tech" target="_blank">Instagram</a>
+        </div>
+    </footer>
+    
+    <script src="config.js"></script>
+    <script>
+        function renderDownloads() {
+            const container = document.getElementById('download-content');
+            let html = '';
+
+            // Render Good Lock Modules
+            html += `
+                <div class="download-category glass-effect">
+                    <h2>Essential Good Lock Modules</h2>
+                    <ul class="download-list">
+                        ${downloadLinks.goodLockModules.map(item => `
+                            <li>
+                                <span>${item.name}</span>
+                                <a href="${item.url}" target="_blank" class="download-link">Download</a>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+
+            // Render System Apps
+            html += `
+                <div class="download-category glass-effect">
+                    <h2>Official One UI System Apps</h2>
+                    <ul class="download-list">
+                        ${downloadLinks.systemApps.map(item => `
+                            <li>
+                                <span>${item.name}</span>
+                                <a href="${item.url}" target="_blank" class="download-link">Download</a>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        // Run the render function only if the necessary data exists
+        if (typeof downloadLinks !== 'undefined') {
+            renderDownloads();
+        }
+    </script>
+</body>
+</html>
